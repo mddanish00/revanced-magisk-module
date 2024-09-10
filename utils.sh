@@ -267,7 +267,7 @@ merge_splits() {
 	cd "$CWD" || abort
 	# if building apk, sign the merged apk properly
 	if isoneof "module" "${build_mode_arr[@]}"; then
-		patch_apk "${bundle}.zip" "${output}" "--exclusive" "${args[cli]}" "${args[ptjar]}"
+		patch_apk "${bundle}.zip" "${output}" "--exclusive" "${args[cli]}" "${args[ptjar]}" "${args[options]}"
 		local ret=$?
 	else
 		cp "${bundle}.zip" "${output}"
